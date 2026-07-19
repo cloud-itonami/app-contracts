@@ -1,0 +1,26 @@
+{
+  "@context": "../schema/context.jsonld",
+  "@type": "SocialContract",
+  "@id": "https://etzhayyim.com/data/social-contracts/japan-constitution",
+  "name": "日本国憲法",
+  "alternateName": "Constitution of Japan",
+  "constitutionalType": "constitution",
+  "jurisdiction": "JP",
+  "adoptedDate": "1946-11-03",
+  "effectiveDate": "1947-05-03",
+  "signatories": [
+    "https://etzhayyim.com/data/organizations/government-of-japan"
+  ],
+  "scope": "日本国の最高法規。国民主権、基本的人権の尊重、平和主義を基本原則とする。",
+  "description": "The supreme law of Japan, established after World War II. Known for Article 9 which renounces war.",
+  "url": "https://elaws.e-gov.go.jp/document?lawid=321CONSTITUTION",
+  "documentUrl": "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/dl-constitution.htm",
+  "sameAs": [
+    "https://www.wikidata.org/wiki/Q160016",
+    "https://japan.kantei.go.jp/constitution_and_government_of_japan/constitution_e.html"
+  ],
+  "source": "https://elaws.e-gov.go.jp",
+  "dateCollected": "2026-02-17T00:00:00Z",
+  "lastVerified": "2026-02-17T00:00:00Z",
+  "confidence": 1
+}

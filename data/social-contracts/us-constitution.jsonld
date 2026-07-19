@@ -1,0 +1,23 @@
+{
+  "@context": "../schema/context.jsonld",
+  "@type": "SocialContract",
+  "@id": "https://etzhayyim.com/data/social-contracts/us-constitution",
+  "name": "Constitution of the United States",
+  "alternateName": "U.S. Constitution",
+  "constitutionalType": "constitution",
+  "jurisdiction": "US",
+  "adoptedDate": "1787-09-17",
+  "effectiveDate": "1789-03-04",
+  "scope": "Supreme law of the United States. Establishes the framework of the federal government and the rights of citizens.",
+  "description": "The oldest written national constitution still in use. Establishes separation of powers among three branches of government.",
+  "url": "https://www.archives.gov/founding-docs/constitution",
+  "documentUrl": "https://www.archives.gov/founding-docs/constitution-transcript",
+  "sameAs": [
+    "https://www.wikidata.org/wiki/Q11698",
+    "https://constitution.congress.gov/constitution/"
+  ],
+  "source": "https://www.archives.gov",
+  "dateCollected": "2026-02-17T00:00:00Z",
+  "lastVerified": "2026-02-17T00:00:00Z",
+  "confidence": 1
+}

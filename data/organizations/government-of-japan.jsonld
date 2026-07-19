@@ -1,0 +1,20 @@
+{
+  "@context": "../schema/context.jsonld",
+  "@type": "Organization",
+  "@id": "https://etzhayyim.com/data/organizations/government-of-japan",
+  "name": "Government of Japan",
+  "alternateName": "日本国政府",
+  "legalName": "日本国",
+  "jurisdiction": "JP",
+  "foundingDate": "1947-05-03",
+  "description": "National government of Japan",
+  "url": "https://www.japan.go.jp",
+  "sameAs": [
+    "https://www.wikidata.org/wiki/Q17",
+    "https://www.japan.go.jp"
+  ],
+  "source": "https://www.japan.go.jp",
+  "dateCollected": "2026-02-17T00:00:00Z",
+  "lastVerified": "2026-02-17T00:00:00Z",
+  "confidence": 1
+}

@@ -1,0 +1,22 @@
+{
+  "@context": "../schema/context.jsonld",
+  "@type": "Contract",
+  "@id": "https://etzhayyim.com/data/contracts/example-procurement-001",
+  "name": "Example Government Procurement Contract",
+  "identifier": "PROC-2026-001",
+  "contractType": "procurement",
+  "parties": [
+    "https://etzhayyim.com/data/organizations/government-of-japan",
+    "https://etzhayyim.com/data/organizations/apple-inc"
+  ],
+  "description": "Example procurement contract for IT infrastructure",
+  "effectiveDate": "2026-01-01",
+  "expirationDate": "2027-12-31",
+  "value": 1000000000,
+  "currency": "JPY",
+  "status": "active",
+  "source": "https://www.example.gov.jp/contracts",
+  "dateCollected": "2026-02-17T00:00:00Z",
+  "lastVerified": "2026-02-17T00:00:00Z",
+  "confidence": 0.8
+}

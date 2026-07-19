@@ -1,0 +1,23 @@
+{
+  "@context": "../schema/context.jsonld",
+  "@type": "Organization",
+  "@id": "https://etzhayyim.com/data/organizations/apple-inc",
+  "name": "Apple Inc.",
+  "legalName": "Apple Inc.",
+  "identifier": "C0806592",
+  "lei": "HWUPKR0MPOU8FGXBT394",
+  "taxID": "94-2404110",
+  "jurisdiction": "US",
+  "foundingDate": "1976-04-01",
+  "description": "American multinational technology company",
+  "url": "https://www.apple.com",
+  "sameAs": [
+    "https://opencorporates.com/companies/us_ca/C0806592",
+    "https://www.wikidata.org/wiki/Q312",
+    "https://lei.bloomberg.com/legal-entity/HWUPKR0MPOU8FGXBT394"
+  ],
+  "source": "https://opencorporates.com/companies/us_ca/C0806592",
+  "dateCollected": "2026-02-17T00:00:00Z",
+  "lastVerified": "2026-02-17T00:00:00Z",
+  "confidence": 1
+}

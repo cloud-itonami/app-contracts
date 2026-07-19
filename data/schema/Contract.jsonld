@@ -1,0 +1,107 @@
+{
+  "@context": "./context.jsonld",
+  "@type": "rdfs:Class",
+  "@id": "etzhayyim:Contract",
+  "rdfs:label": "Contract",
+  "rdfs:comment": "組織・個人間の契約エンティティ（商業契約、雇用契約、政府調達など）",
+  "rdfs:subClassOf": "schema:Thing",
+  "properties": [
+    {
+      "@id": "schema:name",
+      "rdfs:label": "Name",
+      "rdfs:comment": "契約名",
+      "schema:rangeIncludes": "xsd:string",
+      "required": true
+    },
+    {
+      "@id": "schema:identifier",
+      "rdfs:label": "Identifier",
+      "rdfs:comment": "契約識別子",
+      "schema:rangeIncludes": "xsd:string"
+    },
+    {
+      "@id": "etzhayyim:contractType",
+      "rdfs:label": "Contract Type",
+      "rdfs:comment": "契約種別（procurement, employment, service, license など）",
+      "schema:rangeIncludes": "xsd:string",
+      "required": true
+    },
+    {
+      "@id": "etzhayyim:parties",
+      "rdfs:label": "Parties",
+      "rdfs:comment": "契約当事者（Organization または Person）",
+      "schema:rangeIncludes": [
+        "etzhayyim:Organization",
+        "etzhayyim:Person"
+      ],
+      "required": true
+    },
+    {
+      "@id": "etzhayyim:effectiveDate",
+      "rdfs:label": "Effective Date",
+      "rdfs:comment": "効力発生日",
+      "schema:rangeIncludes": "xsd:date"
+    },
+    {
+      "@id": "etzhayyim:expirationDate",
+      "rdfs:label": "Expiration Date",
+      "rdfs:comment": "満了日",
+      "schema:rangeIncludes": "xsd:date"
+    },
+    {
+      "@id": "etzhayyim:terminationDate",
+      "rdfs:label": "Termination Date",
+      "rdfs:comment": "解約日",
+      "schema:rangeIncludes": "xsd:date"
+    },
+    {
+      "@id": "schema:value",
+      "rdfs:label": "Value",
+      "rdfs:comment": "契約金額",
+      "schema:rangeIncludes": "xsd:decimal"
+    },
+    {
+      "@id": "schema:priceCurrency",
+      "rdfs:label": "Currency",
+      "rdfs:comment": "通貨コード（ISO 4217）",
+      "schema:rangeIncludes": "xsd:string"
+    },
+    {
+      "@id": "etzhayyim:status",
+      "rdfs:label": "Status",
+      "rdfs:comment": "契約状態（active, expired, terminated, draft）",
+      "schema:rangeIncludes": "xsd:string"
+    },
+    {
+      "@id": "etzhayyim:documentUrl",
+      "rdfs:label": "Document URL",
+      "rdfs:comment": "契約書類へのリンク",
+      "schema:rangeIncludes": "xsd:anyURI"
+    },
+    {
+      "@id": "schema:source",
+      "rdfs:label": "Source",
+      "rdfs:comment": "データソース",
+      "schema:rangeIncludes": "xsd:anyURI"
+    }
+  ],
+  "examples": [
+    {
+      "@context": "./context.jsonld",
+      "@type": "Contract",
+      "@id": "https://etzhayyim.com/data/contracts/us-gov-spacex-2020",
+      "name": "NASA Commercial Crew Program Contract",
+      "identifier": "NNK14MA74C",
+      "contractType": "procurement",
+      "parties": [
+        "https://etzhayyim.com/data/organizations/nasa",
+        "https://etzhayyim.com/data/organizations/spacex"
+      ],
+      "effectiveDate": "2014-09-16",
+      "value": 2600000000,
+      "currency": "USD",
+      "status": "active",
+      "source": "https://www.nasa.gov/contracts"
+    }
+  ]
+}

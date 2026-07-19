@@ -1,0 +1,118 @@
+{
+  "@context": "./context.jsonld",
+  "@type": "rdfs:Class",
+  "@id": "etzhayyim:SocialContract",
+  "rdfs:label": "Social Contract",
+  "rdfs:comment": "社会契約エンティティ（憲法、国際条約、社会規範など）",
+  "rdfs:subClassOf": "schema:CreativeWork",
+  "properties": [
+    {
+      "@id": "schema:name",
+      "rdfs:label": "Name",
+      "rdfs:comment": "社会契約名",
+      "schema:rangeIncludes": "xsd:string",
+      "required": true
+    },
+    {
+      "@id": "schema:alternateName",
+      "rdfs:label": "Alternate Name",
+      "rdfs:comment": "別名",
+      "schema:rangeIncludes": "xsd:string"
+    },
+    {
+      "@id": "etzhayyim:constitutionalType",
+      "rdfs:label": "Constitutional Type",
+      "rdfs:comment": "社会契約の種別（constitution, treaty, convention, covenant, declaration など）",
+      "schema:rangeIncludes": "xsd:string",
+      "required": true
+    },
+    {
+      "@id": "etzhayyim:jurisdiction",
+      "rdfs:label": "Jurisdiction",
+      "rdfs:comment": "適用管轄区域（国コード、'international' など）",
+      "schema:rangeIncludes": "xsd:string"
+    },
+    {
+      "@id": "etzhayyim:adoptedDate",
+      "rdfs:label": "Adopted Date",
+      "rdfs:comment": "採択日",
+      "schema:rangeIncludes": "xsd:date"
+    },
+    {
+      "@id": "etzhayyim:effectiveDate",
+      "rdfs:label": "Effective Date",
+      "rdfs:comment": "効力発生日",
+      "schema:rangeIncludes": "xsd:date"
+    },
+    {
+      "@id": "etzhayyim:signatories",
+      "rdfs:label": "Signatories",
+      "rdfs:comment": "署名国・署名者",
+      "schema:rangeIncludes": [
+        "etzhayyim:Organization",
+        "etzhayyim:Person"
+      ],
+      "container": "@set"
+    },
+    {
+      "@id": "etzhayyim:scope",
+      "rdfs:label": "Scope",
+      "rdfs:comment": "適用範囲の説明",
+      "schema:rangeIncludes": "xsd:string"
+    },
+    {
+      "@id": "schema:url",
+      "rdfs:label": "URL",
+      "rdfs:comment": "公式文書 URL",
+      "schema:rangeIncludes": "xsd:anyURI"
+    },
+    {
+      "@id": "etzhayyim:documentUrl",
+      "rdfs:label": "Document URL",
+      "rdfs:comment": "契約書類へのリンク",
+      "schema:rangeIncludes": "xsd:anyURI"
+    },
+    {
+      "@id": "schema:sameAs",
+      "rdfs:label": "Same As",
+      "rdfs:comment": "外部データソースの同一エンティティ URI",
+      "schema:rangeIncludes": "xsd:anyURI"
+    }
+  ],
+  "examples": [
+    {
+      "@context": "./context.jsonld",
+      "@type": "SocialContract",
+      "@id": "https://etzhayyim.com/data/social-contracts/un-charter",
+      "name": "Charter of the United Nations",
+      "constitutionalType": "treaty",
+      "jurisdiction": "international",
+      "adoptedDate": "1945-06-26",
+      "effectiveDate": "1945-10-24",
+      "signatories": [
+        "https://etzhayyim.com/data/organizations/united-nations"
+      ],
+      "scope": "International peace and security, human rights, international law",
+      "url": "https://www.un.org/en/about-us/un-charter",
+      "sameAs": [
+        "https://www.wikidata.org/wiki/Q11970"
+      ]
+    },
+    {
+      "@context": "./context.jsonld",
+      "@type": "SocialContract",
+      "@id": "https://etzhayyim.com/data/social-contracts/jp-constitution",
+      "name": "日本国憲法",
+      "alternateName": "Constitution of Japan",
+      "constitutionalType": "constitution",
+      "jurisdiction": "JP",
+      "adoptedDate": "1946-11-03",
+      "effectiveDate": "1947-05-03",
+      "scope": "日本国の最高法規",
+      "url": "https://elaws.e-gov.go.jp/document?lawid=321CONSTITUTION",
+      "sameAs": [
+        "https://www.wikidata.org/wiki/Q160016"
+      ]
+    }
+  ]
+}

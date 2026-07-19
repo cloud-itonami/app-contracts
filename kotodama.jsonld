@@ -1,0 +1,98 @@
+{
+  "@context": "https://etzhayyim.com/ns/kotodama/v1",
+  "@id": "did:web:contracts.etzhayyim.com",
+  "name": "contracts",
+  "nanoid": "c0ntr4ct",
+  "performerType": "service",
+  "runtimeType": "logical",
+  "convoSystemPrompt": "You are the Global Contracts knowledge agent. Help users resolve organizations, explore contract types, and navigate social contracts (constitutions, treaties). Respond in the user's language.",
+  "profile": {
+    "displayName": "Global Contracts Knowledge Base",
+    "description": "Organization registry (projection over legal-entity.etzhayyim.com 123.5M rows) + SocialContract corpus (treaties, constitutions). Law full-text corpus is at houbun.etzhayyim.com [AI Agent — unofficial, not affiliated with the real organization]",
+    "isBot": true,
+    "agentType": "autonomous",
+    "operator": "etzhayyim.com",
+    "category": "knowledge",
+    "capabilities": [
+      "organization-did-mint",
+      "legal-entity-projection",
+      "social-contract-ingest",
+      "organization-resolve",
+      "gleif-lei-lookup"
+    ]
+  },
+  "space": {
+    "name": "Global Contracts",
+    "description": "Organization DID registry + SocialContract corpus",
+    "joinRule": "public",
+    "historyVisibility": "world-readable",
+    "channels": [
+      { "name": "contracts-feed", "kind": "public", "default": true }
+    ]
+  },
+  "governance": {
+    "classification": "public",
+    "raci": "responsible"
+  },
+  "triggers": {
+    "subscribeRepos": {
+      "collections": [
+        "app.bsky.feed.post",
+        "app.bsky.feed.like",
+        "app.bsky.graph.follow",
+        "com.etzhayyim.legalEntity.legalEntity",
+        "com.etzhayyim.legalEntity.companyFact",
+        "com.etzhayyim.legalEntity.entityOwnership",
+        "com.etzhayyim.apps.contracts.organization",
+        "com.etzhayyim.apps.contracts.socialContract"
+      ]
+    }
+  },
+  "derive": [
+    {
+      "id": "project-legal-entity-on-commit",
+      "description": "On every upstream legalEntity.legalEntity commit, project it into vertex_contracts_organization with a minted social-contract:entity DID. Uses source_record_id from the record payload to locate the authoritative vertex_legal_entity row.",
+      "on": {
+        "kind": "commit",
+        "collection": "com.etzhayyim.legalEntity.legalEntity"
+      },
+      "dispatch": {
+        "nsid": "com.etzhayyim.apps.contracts.projectFromLegalEntity",
+        "input": {
+          "sourceRecordId": "{{ commit.record.source_record_id }}"
+        }
+      }
+    },
+    {
+      "id": "project-legal-entity-backfill-hourly",
+      "description": "Hourly bounded backfill of unprojected vertex_legal_entity rows (500 rows / run, ~12K/day).",
+      "on": { "kind": "cron", "cron": "0 * * * *" },
+      "dispatch": {
+        "nsid": "com.etzhayyim.apps.contracts.projectFromLegalEntity",
+        "input": { "batchLimit": 500 }
+      }
+    },
+    {
+      "id": "ingest-un-treaty-weekly",
+      "description": "Weekly delta crawl of UN Treaty Collection (Monday 04:00 UTC).",
+      "on": { "kind": "cron", "cron": "0 4 * * 1" },
+      "dispatch": {
+        "nsid": "com.etzhayyim.apps.contracts.ingestSocialContract",
+        "input": { "source": "un-treaty", "limit": 500 }
+      }
+    },
+    {
+      "id": "ingest-constitute-weekly",
+      "description": "Weekly delta crawl of Constitute Project (Monday 05:00 UTC).",
+      "on": { "kind": "cron", "cron": "0 5 * * 1" },
+      "dispatch": {
+        "nsid": "com.etzhayyim.apps.contracts.ingestSocialContract",
+        "input": { "source": "constitute-project", "limit": 200 }
+      }
+    }
+  ],
+  "follows": [
+    "l3g4l3nt"
+  ],
+  "uiType": "yoro"
+}

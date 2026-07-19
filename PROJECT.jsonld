@@ -1,0 +1,42 @@
+{
+  "@context": "https://etzhayyim.com/schema/",
+  "@type": "etzhayyim:Project",
+  "@id": "etzhayyim-project-contracts",
+  "name": "Global Contracts Knowledge Base",
+  "description": "全世界の契約情報を JSON-LD として構造化・管理するプロジェクト。Social contract、組織、自然人などを含む包括的な契約データベース。",
+  "category": "knowledge",
+  "capabilities": [
+    "CV-1: Contract Knowledge Management",
+    "CV-2: Global Organization Registry",
+    "CV-3: Social Contract Tracking",
+    "CV-4: Legal Entity Resolution"
+  ],
+  "performers": [
+    {
+      "@type": "etzhayyim:AIActor",
+      "@id": "contracts-crawler",
+      "activity": "Contract data collection and normalization"
+    },
+    {
+      "@type": "etzhayyim:System",
+      "@id": "contracts-api",
+      "activity": "Contract data API service"
+    }
+  ],
+  "dataSources": [
+    "etzhayyim-project-crawler",
+    "OpenCorporates",
+    "GLEIF (Legal Entity Identifier)",
+    "Government contract registries",
+    "Social contract repositories"
+  ],
+  "publishedTo": [
+    "etzhayyim-project-public-global"
+  ],
+  "maintainers": [
+    "etzhayyim.com platform team"
+  ],
+  "version": "0.1.0",
+  "created": "2026-02-17T00:00:00Z",
+  "updated": "2026-02-17T00:00:00Z"
+}

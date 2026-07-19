@@ -1,0 +1,89 @@
+{
+  "@context": "./context.jsonld",
+  "@type": "rdfs:Class",
+  "@id": "etzhayyim:Organization",
+  "rdfs:label": "Organization",
+  "rdfs:comment": "法人、政府機関、非営利団体などの組織エンティティ",
+  "rdfs:subClassOf": "schema:Organization",
+  "properties": [
+    {
+      "@id": "schema:name",
+      "rdfs:label": "Name",
+      "rdfs:comment": "組織の通称",
+      "schema:rangeIncludes": "xsd:string",
+      "required": true
+    },
+    {
+      "@id": "schema:legalName",
+      "rdfs:label": "Legal Name",
+      "rdfs:comment": "法的登録名",
+      "schema:rangeIncludes": "xsd:string"
+    },
+    {
+      "@id": "schema:identifier",
+      "rdfs:label": "Identifier",
+      "rdfs:comment": "組織識別子（法人番号、company registration number など）",
+      "schema:rangeIncludes": "xsd:string"
+    },
+    {
+      "@id": "gleif:hasLEI",
+      "rdfs:label": "Legal Entity Identifier",
+      "rdfs:comment": "GLEIF LEI（20桁の国際標準識別子）",
+      "schema:rangeIncludes": "xsd:string"
+    },
+    {
+      "@id": "schema:taxID",
+      "rdfs:label": "Tax ID",
+      "rdfs:comment": "税務識別番号",
+      "schema:rangeIncludes": "xsd:string"
+    },
+    {
+      "@id": "etzhayyim:jurisdiction",
+      "rdfs:label": "Jurisdiction",
+      "rdfs:comment": "登録管轄区域（ISO 3166-1 alpha-2）",
+      "schema:rangeIncludes": "xsd:string"
+    },
+    {
+      "@id": "schema:foundingDate",
+      "rdfs:label": "Founding Date",
+      "rdfs:comment": "設立日",
+      "schema:rangeIncludes": "xsd:date"
+    },
+    {
+      "@id": "schema:dissolutionDate",
+      "rdfs:label": "Dissolution Date",
+      "rdfs:comment": "解散日",
+      "schema:rangeIncludes": "xsd:date"
+    },
+    {
+      "@id": "schema:url",
+      "rdfs:label": "URL",
+      "rdfs:comment": "公式ウェブサイト",
+      "schema:rangeIncludes": "xsd:anyURI"
+    },
+    {
+      "@id": "schema:sameAs",
+      "rdfs:label": "Same As",
+      "rdfs:comment": "外部データソースの同一エンティティ URI",
+      "schema:rangeIncludes": "xsd:anyURI"
+    }
+  ],
+  "examples": [
+    {
+      "@context": "./context.jsonld",
+      "@type": "Organization",
+      "@id": "https://etzhayyim.com/data/organizations/apple-inc",
+      "name": "Apple Inc.",
+      "legalName": "Apple Inc.",
+      "identifier": "C0806592",
+      "lei": "HWUPKR0MPOU8FGXBT394",
+      "jurisdiction": "US",
+      "foundingDate": "1976-04-01",
+      "url": "https://www.apple.com",
+      "sameAs": [
+        "https://opencorporates.com/companies/us_ca/C0806592",
+        "https://www.wikidata.org/wiki/Q312"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "@context": "./context.jsonld",
+  "@type": "rdfs:Class",
+  "@id": "etzhayyim:Person",
+  "rdfs:label": "Person",
+  "rdfs:comment": "自然人エンティティ",
+  "rdfs:subClassOf": "schema:Person",
+  "properties": [
+    {
+      "@id": "schema:name",
+      "rdfs:label": "Name",
+      "rdfs:comment": "フルネーム",
+      "schema:rangeIncludes": "xsd:string",
+      "required": true
+    },
+    {
+      "@id": "schema:givenName",
+      "rdfs:label": "Given Name",
+      "rdfs:comment": "名",
+      "schema:rangeIncludes": "xsd:string"
+    },
+    {
+      "@id": "schema:familyName",
+      "rdfs:label": "Family Name",
+      "rdfs:comment": "姓",
+      "schema:rangeIncludes": "xsd:string"
+    },
+    {
+      "@id": "schema:birthDate",
+      "rdfs:label": "Birth Date",
+      "rdfs:comment": "生年月日",
+      "schema:rangeIncludes": "xsd:date"
+    },
+    {
+      "@id": "schema:nationality",
+      "rdfs:label": "Nationality",
+      "rdfs:comment": "国籍（ISO 3166-1 alpha-2）",
+      "schema:rangeIncludes": "xsd:string"
+    },
+    {
+      "@id": "schema:identifier",
+      "rdfs:label": "Identifier",
+      "rdfs:comment": "個人識別子（注意: プライバシー保護が必要）",
+      "schema:rangeIncludes": "xsd:string"
+    },
+    {
+      "@id": "schema:sameAs",
+      "rdfs:label": "Same As",
+      "rdfs:comment": "外部データソースの同一エンティティ URI",
+      "schema:rangeIncludes": "xsd:anyURI"
+    }
+  ],
+  "privacyNote": "個人情報の取り扱いには GDPR, CCPA などのプライバシー規制を遵守すること。公開データのみを収集・公開する。",
+  "examples": [
+    {
+      "@context": "./context.jsonld",
+      "@type": "Person",
+      "@id": "https://etzhayyim.com/data/persons/satoshi-nakamoto",
+      "name": "Satoshi Nakamoto",
+      "description": "Bitcoin creator (pseudonymous)",
+      "sameAs": [
+        "https://www.wikidata.org/wiki/Q13504063"
+      ]
+    }
+  ]
+}

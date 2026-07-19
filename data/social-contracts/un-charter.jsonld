@@ -1,0 +1,26 @@
+{
+  "@context": "../schema/context.jsonld",
+  "@type": "SocialContract",
+  "@id": "https://etzhayyim.com/data/social-contracts/un-charter",
+  "name": "Charter of the United Nations",
+  "alternateName": "UN Charter",
+  "constitutionalType": "treaty",
+  "jurisdiction": "international",
+  "adoptedDate": "1945-06-26",
+  "effectiveDate": "1945-10-24",
+  "signatories": [
+    "https://etzhayyim.com/data/organizations/united-nations"
+  ],
+  "scope": "International peace and security, human rights, international law, and social progress",
+  "description": "The foundational treaty of the United Nations, establishing its purposes, principles, and structure",
+  "url": "https://www.un.org/en/about-us/un-charter",
+  "documentUrl": "https://www.un.org/en/about-us/un-charter/full-text",
+  "sameAs": [
+    "https://www.wikidata.org/wiki/Q11970",
+    "https://treaties.un.org/doc/publication/ctc/uncharter.pdf"
+  ],
+  "source": "https://www.un.org",
+  "dateCollected": "2026-02-17T00:00:00Z",
+  "lastVerified": "2026-02-17T00:00:00Z",
+  "confidence": 1
+}

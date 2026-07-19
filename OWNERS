@@ -1,0 +1,9 @@
+# OWNERS
+# etzhayyim-project-contracts ownership
+
+approvers:
+  - etzhayyim-platform-team
+
+reviewers:
+  - etzhayyim-platform-team
+  - etzhayyim-data-team
