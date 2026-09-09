@@ -184,9 +184,22 @@ WHERE {
 ### Validation
 
 ```bash
-# JSON-LD validation (planned)
-bazel test //60-apps/etzhayyim-project-contracts/...
+nbb test/contracts/validate_test.cljs
 ```
+
+corpus 全体を読んで、`@context` の解決、class 定義と instance の同一性、
+`@id` と file path の一致、required property、record 間の参照、値の型
+（`xsd:date` / `xsd:dateTime` / LEI の ISO 17442 検査数字 / ISO 4217 / confidence の範囲）、
+日付の順序を検査する。検査の本体は `src/contracts/validate.cljc` で、disk を触るのは
+`src/contracts/corpus.cljs` だけ。
+
+**record が 0 件の corpus に対しては pass を返さず refuse する。** finding が
+空であることには「見て問題が無かった」と「何も見なかった」の 2 つの意味が在り、
+後者を緑にすると corpus を全部消した tree が健全な tree と同じ値を返す。
+
+この検査が本当に噛むことは superproject の
+`scripts/maturity-loop/mutations.edn`（suite `orgs/cloud-itonami/app-contracts`）が
+14 通りの壊し方で確かめている。
 
 ## Roadmap
 

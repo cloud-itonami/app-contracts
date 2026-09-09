@@ -9,11 +9,11 @@
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "gleif": "https://www.gleif.org/ontology/",
     "Organization": {
-      "@id": "schema:Organization",
+      "@id": "etzhayyim:Organization",
       "@type": "@id"
     },
     "Person": {
-      "@id": "schema:Person",
+      "@id": "etzhayyim:Person",
       "@type": "@id"
     },
     "Contract": {

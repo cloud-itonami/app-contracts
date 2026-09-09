@@ -1,0 +1,5 @@
+;; nbb は deps.edn も bb.edn も読まない（ADR-2609093000）。
+;; この repo の .cljs が解決する namespace はここだけが宣言する。
+;; 外部 coordinate は 1 つも要らない —— validator は cljs core と
+;; node の組み込みモジュールしか使わない。
+{:paths ["src" "test"]}
