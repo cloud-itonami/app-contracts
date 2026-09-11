@@ -184,7 +184,7 @@ WHERE {
 ### Validation
 
 ```bash
-nbb test/contracts/validate_test.cljs
+kbb --backend sci test/contracts/validate_test.cljk
 ```
 
 corpus 全体を読んで、`@context` の解決、class 定義と instance の同一性、
